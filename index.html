@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business In China — Sourcing & Import depuis la Chine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red:     #D0212A;
+  --red-dark:#9A1520;
+  --gold:    #C9A84C;
+  --gold-lt: #E8C97A;
+  --ink:     #0E0E0E;
+  --ink2:    #1C1C1C;
+  --smoke:   #F4F1EC;
+  --mist:    #E8E4DC;
+  --white:   #FDFCFA;
+  --muted:   #7A7570;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--smoke);
+  color:var(--ink);
+  font-family:'IBM Plex Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+/* ─── SCROLLBAR ─── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--smoke)}
+::-webkit-scrollbar-thumb{background:var(--red)}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.2rem 5%;
+  background:rgba(14,14,14,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,168,76,0.15);
+}
+.nav-brand{
+  display:flex;align-items:center;gap:1rem;
+  text-decoration:none;
+}
+/* LOGO placeholder */
+.logo-box{
+  width:48px;height:48px;
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.logo-box img{width:100%;height:100%;object-fit:contain;display:none}
+.logo-box .logo-placeholder{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;font-weight:900;
+  color:var(--gold);
+  letter-spacing:-0.02em;
+}
+.brand-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;font-weight:700;
+  color:var(--white);
+  letter-spacing:0.02em;
+  line-height:1.1;
+}
+.brand-name span{
+  display:block;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.55rem;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:400;
+}
+.nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
+.nav-links a{
+  font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(253,252,250,0.55);text-decoration:none;
+  transition:color .25s;font-weight:500;
+}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{
+  background:var(--red);color:var(--white)!important;
+  padding:.55rem 1.3rem;
+  font-size:0.7rem!important;letter-spacing:0.15em!important;
+  transition:background .25s!important;
+}
+.nav-cta:hover{background:var(--red-dark)!important;color:var(--white)!important}
+
+/* hamburger */
+.hamburger{
+  display:none;flex-direction:column;gap:5px;cursor:pointer;
+  background:none;border:none;padding:4px;
+}
+.hamburger span{
+  display:block;width:24px;height:2px;
+  background:var(--white);border-radius:2px;
+  transition:all .3s;
+}
+.nav-mobile{
+  display:none;flex-direction:column;gap:0;
+  background:var(--ink2);
+  border-top:1px solid rgba(201,168,76,0.15);
+}
+.nav-mobile.open{display:flex}
+.nav-mobile a{
+  padding:1rem 5%;
+  font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(253,252,250,0.6);text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:color .25s,background .25s;
+}
+.nav-mobile a:hover{color:var(--gold);background:rgba(201,168,76,0.05)}
+
+/* ─── HERO ─── */
+.hero{
+  min-height:100vh;
+  background:var(--ink);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+}
+.hero-bg-pattern{
+  position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,0.04) 79px,rgba(201,168,76,0.04) 80px),
+    repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,0.04) 79px,rgba(201,168,76,0.04) 80px);
+  pointer-events:none;
+}
+.hero-left{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:8rem 5% 6rem 7%;
+}
+.hero-eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;
+  display:flex;align-items:center;gap:.8rem;
+  opacity:0;animation:fadeUp .7s .2s forwards;
+}
+.hero-eyebrow::before{
+  content:'';width:30px;height:1px;background:var(--gold);flex-shrink:0;
+}
+.hero-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,5.5vw,6.5rem);
+  font-weight:900;line-height:1;
+  letter-spacing:-0.02em;
+  color:var(--white);
+  margin-bottom:2.5rem;
+}
+.hero-title .line{display:block;overflow:hidden}
+.hero-title .line span{
+  display:block;
+  opacity:0;transform:translateY(100%);
+}
+.hero-title .line:nth-child(1) span{animation:slideUp .9s .3s cubic-bezier(.16,1,.3,1) forwards}
+.hero-title .line:nth-child(2) span{animation:slideUp .9s .45s cubic-bezier(.16,1,.3,1) forwards}
+.hero-title .line:nth-child(3) span{animation:slideUp .9s .6s cubic-bezier(.16,1,.3,1) forwards}
+.hero-title .accent{color:var(--red)}
+.hero-title .gold{color:var(--gold)}
+
+.hero-desc{
+  font-size:1.05rem;line-height:1.75;color:rgba(253,252,250,0.55);
+  font-weight:300;max-width:440px;margin-bottom:3rem;
+  opacity:0;animation:fadeUp .8s .85s forwards;
+}
+.hero-actions{
+  display:flex;gap:1rem;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .8s 1s forwards;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.7rem;
+  background:var(--red);color:var(--white);
+  padding:1rem 2rem;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;border:none;cursor:pointer;
+  transition:background .3s,gap .3s;flex-shrink:0;
+}
+.btn-primary:hover{background:var(--red-dark);gap:1.2rem}
+.btn-primary::after{content:'→'}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:.7rem;
+  border:1px solid rgba(201,168,76,0.4);color:var(--gold);
+  padding:1rem 2rem;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;background:transparent;
+  transition:border-color .3s,color .3s,gap .3s;flex-shrink:0;
+}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold-lt);gap:1.2rem}
+.btn-secondary::after{content:'↓'}
+
+.hero-right{
+  position:relative;z-index:1;overflow:hidden;
+  opacity:0;animation:fadeIn 1.2s .4s forwards;
+}
+.hero-visual-fill{
+  position:absolute;inset:0;
+  background:#0e0e0e;
+}
+.hero-visual-fill img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+  filter:brightness(0.5) saturate(0.75);
+}
+.hero-visual-fill::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,rgba(14,14,14,0.45) 0%,transparent 40%),
+             linear-gradient(to top,rgba(14,14,14,0.55) 0%,transparent 50%),
+             radial-gradient(ellipse at 60% 40%,rgba(201,168,76,0.08) 0%,transparent 60%);
+}
+.hero-china-char{
+  position:absolute;
+  bottom:-2rem;right:-1rem;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(12rem,20vw,22rem);
+  font-weight:900;
+  color:rgba(255,255,255,0.04);
+  line-height:1;
+  user-select:none;
+  letter-spacing:-0.05em;
+}
+.hero-badge{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:clamp(100px,12vw,160px);height:clamp(100px,12vw,160px);
+  border:1px solid rgba(201,168,76,0.4);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  animation:rotateBadge 25s linear infinite;
+}
+.hero-badge svg{width:100%;height:100%;fill:rgba(201,168,76,0.55)}
+
+.hero-stats{
+  position:absolute;bottom:3rem;left:5%;
+  display:flex;gap:3rem;z-index:3;
+  opacity:0;animation:fadeUp .8s 1.2s forwards;
+}
+.hero-stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;
+  color:var(--gold);display:block;line-height:1;
+}
+.hero-stat-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.55rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(253,252,250,0.35);margin-top:.3rem;
+}
+
+/* ─── TICKER ─── */
+.ticker{
+  background:var(--red);padding:.9rem 0;
+  overflow:hidden;white-space:nowrap;
+}
+.ticker-track{
+  display:inline-flex;
+  animation:ticker 22s linear infinite;
+}
+.ticker-item{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(253,252,250,0.85);padding:0 2.5rem;
+}
+.ticker-sep{color:rgba(253,252,250,0.4);padding:0 .5rem}
+
+/* ─── SECTIONS COMMUNS ─── */
+section{padding:7rem 7%}
+.section-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--red);margin-bottom:1.2rem;
+  display:flex;align-items:center;gap:.8rem;
+}
+.section-tag::before{content:'';width:25px;height:1px;background:var(--red);flex-shrink:0}
+.section-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3.8rem);
+  font-weight:700;line-height:1.1;
+  letter-spacing:-0.02em;margin-bottom:1.5rem;
+}
+.section-h2 em{font-style:italic;color:var(--red)}
+
+/* ─── SERVICES ─── */
+.services-section{background:var(--white)}
+.services-top{
+  display:grid;grid-template-columns:1fr 1.8fr;
+  gap:5rem;align-items:end;margin-bottom:5rem;
+}
+.services-intro p{
+  font-size:1.05rem;line-height:1.75;color:var(--muted);font-weight:300;
+}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+}
+.service-card{
+  padding:2.5rem 2rem;
+  border:1px solid var(--mist);
+  border-right:none;
+  position:relative;overflow:hidden;
+  transition:background .4s;
+}
+.service-card:last-child{border-right:1px solid var(--mist)}
+.service-card::before{
+  content:'';position:absolute;inset:0;
+  background:var(--ink);
+  transform:translateY(101%);
+  transition:transform .5s cubic-bezier(.76,0,.24,1);
+  z-index:0;
+}
+.service-card:hover::before{transform:translateY(0)}
+.service-card>*{position:relative;z-index:1}
+.service-card:hover .svc-num,
+.service-card:hover .svc-title,
+.service-card:hover .svc-desc{color:rgba(253,252,250,0.85)}
+.service-card:hover .svc-icon{color:var(--gold)}
+.svc-icon{
+  font-size:2rem;margin-bottom:1.5rem;
+  color:var(--red);transition:color .3s;display:block;
+}
+.svc-num{
+  font-family:'IBM Plex Mono',monospace;font-size:0.58rem;
+  letter-spacing:0.2em;color:var(--muted);margin-bottom:1rem;
+  transition:color .3s;
+}
+.svc-title{
+  font-family:'Playfair Display',serif;font-size:1.4rem;
+  font-weight:700;margin-bottom:.8rem;transition:color .3s;
+}
+.svc-desc{
+  font-size:.9rem;line-height:1.65;color:var(--muted);
+  font-weight:300;transition:color .3s;
+}
+
+/* ─── HOW IT WORKS ─── */
+.how-section{
+  background:var(--ink);color:var(--white);
+  position:relative;overflow:hidden;
+}
+.how-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 79px,rgba(201,168,76,0.03) 79px,rgba(201,168,76,0.03) 80px),
+    repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(201,168,76,0.03) 79px,rgba(201,168,76,0.03) 80px);
+  pointer-events:none;
+}
+.how-section .section-h2{color:var(--white)}
+.how-section .section-h2 em{color:var(--gold)}
+.how-section .section-tag{color:var(--gold)}
+.how-section .section-tag::before{background:var(--gold)}
+.how-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;margin-top:5rem;position:relative;
+}
+.how-steps::before{
+  content:'';position:absolute;
+  top:2.2rem;left:calc(12.5% + 1rem);right:calc(12.5% + 1rem);
+  height:1px;background:rgba(201,168,76,0.2);
+  pointer-events:none;
+}
+.how-step{padding:0 2rem;text-align:center;position:relative}
+.step-num{
+  width:44px;height:44px;border:1px solid var(--gold);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'IBM Plex Mono',monospace;font-size:.7rem;
+  color:var(--gold);margin:0 auto 2rem;
+  background:var(--ink);position:relative;z-index:1;
+}
+.step-title{
+  font-family:'Playfair Display',serif;font-size:1.2rem;
+  font-weight:700;color:var(--white);margin-bottom:.8rem;
+}
+.step-desc{font-size:.88rem;line-height:1.65;color:rgba(253,252,250,0.45);font-weight:300}
+
+/* ─── CATEGORIES ─── */
+.categories-section{background:var(--smoke)}
+.categories-section .section-h2 em{color:var(--red)}
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.2rem;margin-top:4rem;
+}
+.cat-card{
+  background:var(--white);
+  padding:2rem 1.5rem;
+  border-bottom:3px solid transparent;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+  cursor:default;
+}
+.cat-card:hover{
+  border-color:var(--red);
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(208,33,42,0.1);
+}
+.cat-icon{font-size:2.2rem;margin-bottom:1rem;display:block}
+.cat-title{
+  font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;
+  margin-bottom:.4rem;
+}
+.cat-sub{font-size:.8rem;color:var(--muted);line-height:1.5;font-weight:300}
+
+/* ─── WHY US ─── */
+.why-section{
+  background:var(--ink2);color:var(--white);
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:6rem;align-items:center;
+}
+.why-visual{
+  position:relative;height:500px;overflow:hidden;
+}
+.why-visual-fill{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#1a0a0b 0%,#6a1520 50%,#D0212A 100%);
+}
+.why-visual-fill::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 70%,rgba(201,168,76,0.2) 0%,transparent 55%);
+}
+.why-big-num{
+  position:absolute;bottom:-2rem;left:-1rem;
+  font-family:'Playfair Display',serif;
+  font-size:18rem;font-weight:900;
+  color:rgba(255,255,255,0.04);
+  line-height:1;user-select:none;letter-spacing:-0.05em;
+}
+.why-badge-mini{
+  position:absolute;top:2.5rem;right:2.5rem;
+  background:var(--gold);
+  padding:1rem 1.5rem;
+  text-align:center;
+}
+.why-badge-mini strong{
+  font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;
+  color:var(--ink);display:block;line-height:1;
+}
+.why-badge-mini span{
+  font-family:'IBM Plex Mono',monospace;font-size:.55rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);
+}
+.why-content .section-h2{color:var(--white)}
+.why-content .section-h2 em{color:var(--gold)}
+.why-content .section-tag{color:var(--gold)}
+.why-content .section-tag::before{background:var(--gold)}
+.why-list{list-style:none;margin-top:2.5rem;display:flex;flex-direction:column;gap:1.2rem}
+.why-list li{
+  display:flex;gap:1rem;align-items:flex-start;
+  font-size:.95rem;line-height:1.6;color:rgba(253,252,250,0.6);font-weight:300;
+}
+.why-list li::before{
+  content:'✓';
+  color:var(--gold);font-size:.8rem;
+  width:22px;height:22px;border:1px solid rgba(201,168,76,0.3);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:2px;
+}
+
+/* ─── CONTACT ─── */
+.contact-section{
+  background:var(--smoke);
+  display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;
+}
+.contact-info .section-h2 em{color:var(--red)}
+.contact-detail{margin-top:3rem;display:flex;flex-direction:column;gap:2rem}
+.cdetail{display:flex;gap:1.2rem;align-items:flex-start}
+.cdetail-icon{
+  width:44px;height:44px;background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0;color:var(--white);
+}
+.cdetail-label{
+  font-family:'IBM Plex Mono',monospace;font-size:.58rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem;
+}
+.cdetail-val{font-size:1rem;font-weight:500;line-height:1.4}
+.cdetail-val a{color:var(--ink);text-decoration:none;transition:color .25s}
+.cdetail-val a:hover{color:var(--red)}
+
+.contact-form{background:var(--white);padding:3rem;box-shadow:0 4px 30px rgba(0,0,0,0.06)}
+.contact-form h3{
+  font-family:'Playfair Display',serif;font-size:1.6rem;
+  font-weight:700;margin-bottom:2rem;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.field{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem}
+.field label{
+  font-family:'IBM Plex Mono',monospace;font-size:.58rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+}
+.field input,.field textarea,.field select{
+  border:none;border-bottom:1.5px solid var(--mist);
+  padding:.75rem 0;background:transparent;
+  font-family:'IBM Plex Sans',sans-serif;font-size:1rem;font-weight:300;
+  color:var(--ink);outline:none;
+  transition:border-color .3s;width:100%;
+}
+.field select{cursor:pointer}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--red)}
+.field textarea{resize:none}
+.field input::placeholder,.field textarea::placeholder{color:rgba(122,117,112,0.4)}
+.submit-btn{
+  display:inline-flex;align-items:center;gap:.8rem;
+  background:var(--red);color:var(--white);border:none;
+  padding:1.1rem 2.5rem;cursor:pointer;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  transition:background .3s,gap .3s;margin-top:.5rem;
+}
+.submit-btn:hover{background:var(--red-dark);gap:1.3rem}
+.submit-btn::after{content:'→'}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--ink);
+  padding:4rem 7% 2rem;
+}
+.footer-top{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  gap:4rem;padding-bottom:3rem;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  margin-bottom:2rem;
+}
+.footer-brand .brand-name{color:var(--white);font-size:1.2rem}
+.footer-about{
+  font-size:.9rem;line-height:1.7;
+  color:rgba(253,252,250,0.35);font-weight:300;margin-top:1rem;
+  max-width:320px;
+}
+.footer-col h4{
+  font-family:'IBM Plex Mono',monospace;font-size:.6rem;
+  letter-spacing:.25em;text-transform:uppercase;color:var(--gold);
+  margin-bottom:1.5rem;
+}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.8rem}
+.footer-col ul a{
+  font-size:.85rem;color:rgba(253,252,250,0.35);text-decoration:none;
+  transition:color .25s;
+}
+.footer-col ul a:hover{color:var(--gold)}
+.footer-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+}
+.footer-copy{
+  font-family:'IBM Plex Mono',monospace;font-size:.58rem;
+  letter-spacing:.12em;color:rgba(253,252,250,0.2);
+}
+.footer-social{display:flex;gap:1rem}
+.social-link{
+  width:34px;height:34px;border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(253,252,250,0.35);text-decoration:none;font-size:.85rem;
+  transition:border-color .25s,color .25s;
+}
+.social-link:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ─── SOCIAL FABS ─── */
+.social-fabs{
+  position:fixed;bottom:2rem;right:2rem;z-index:999;
+  display:flex;flex-direction:column;align-items:flex-end;gap:.7rem;
+}
+.whatsapp-fab{
+  display:flex;align-items:center;gap:.8rem;
+  background:#25D366;color:var(--white);
+  padding:.9rem 1.4rem;border-radius:50px;
+  text-decoration:none;font-weight:500;font-size:.85rem;
+  box-shadow:0 6px 24px rgba(37,211,102,0.35);
+  transition:transform .3s,box-shadow .3s;
+  animation:popIn .6s 1.5s cubic-bezier(.34,1.56,.64,1) both;
+}
+.whatsapp-fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 32px rgba(37,211,102,0.45)}
+.whatsapp-fab svg{width:22px;height:22px;fill:var(--white);flex-shrink:0}
+.fab-label{font-family:'IBM Plex Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase}
+.fb-fab{
+  display:flex;align-items:center;gap:.8rem;
+  background:#1877F2;color:var(--white);
+  padding:.9rem 1.4rem;border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 6px 24px rgba(24,119,242,0.35);
+  transition:transform .3s,box-shadow .3s;
+  animation:popIn .6s 1.7s cubic-bezier(.34,1.56,.64,1) both;
+}
+.fb-fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 32px rgba(24,119,242,0.45)}
+.fb-fab svg{width:22px;height:22px;fill:var(--white);flex-shrink:0}
+.ig-fab{
+  display:flex;align-items:center;gap:.8rem;
+  background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+  color:var(--white);
+  padding:.9rem 1.4rem;border-radius:50px;
+  text-decoration:none;
+  box-shadow:0 6px 24px rgba(220,39,67,0.35);
+  transition:transform .3s,box-shadow .3s;
+  animation:popIn .6s 1.9s cubic-bezier(.34,1.56,.64,1) both;
+}
+.ig-fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 12px 32px rgba(220,39,67,0.45)}
+.ig-fab svg{width:22px;height:22px;fill:var(--white);flex-shrink:0}
+@media(max-width:600px){
+  .social-fabs{bottom:1.2rem;right:1.2rem}
+  .fab-label{display:none}
+  .whatsapp-fab,.fb-fab,.ig-fab{padding:.85rem}
+}
+
+/* ─── SCROLL REVEAL ─── */
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}
+.reveal-d2{transition-delay:.22s}
+.reveal-d3{transition-delay:.34s}
+.reveal-d4{transition-delay:.46s}
+
+/* ─── KEYFRAMES ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(100%)}to{opacity:1;transform:translateY(0)}}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes rotateBadge{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes popIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+
+/* ══════════════════════════════════════
+   CORRECTIF GLOBAL — empêche le défilement horizontal
+   ══════════════════════════════════════ */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+*, *::before, *::after {
+  max-width: 100%;
+}
+img, svg, video { max-width: 100%; }
+
+/* ══════════════════════════
+   RESPONSIVE — TABLET ≤900px
+   ══════════════════════════ */
+@media(max-width:900px){
+  section{padding:5rem 5%}
+  nav{padding:1rem 4%}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+
+  /* Hero : 2 colonnes → 1 colonne */
+  .hero{
+    display:flex;flex-direction:column;
+    min-height:auto;
+  }
+  .hero-bg-pattern{display:none}
+  .hero-left{padding:6.5rem 5% 3rem;width:100%}
+  .hero-right{
+    width:100%;height:55vw;min-height:220px;
+    position:relative;flex-shrink:0;
+  }
+  .hero-stats{
+    position:relative;bottom:auto;left:auto;
+    width:100%;display:flex;flex-wrap:wrap;gap:1.5rem;
+    background:var(--ink2);padding:1.5rem 5%;
+    opacity:1;animation:none;
+  }
+  .hero-badge{width:90px;height:90px}
+
+  .services-top{grid-template-columns:1fr;gap:2rem}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .service-card:nth-child(2){border-right:1px solid var(--mist)}
+  .service-card:nth-child(3){border-right:none;border-top:none}
+  .service-card:nth-child(4){border-top:none}
+  .service-card:nth-child(5){border-top:none}
+  .service-card:nth-child(6){border-top:none}
+
+  .how-steps{grid-template-columns:1fr 1fr;gap:3rem}
+  .how-steps::before{display:none}
+
+  .cat-grid{grid-template-columns:repeat(2,1fr)}
+
+  .why-section{
+    display:flex;flex-direction:column;
+    padding:5rem 5%;
+  }
+  .why-visual{height:280px;width:100%}
+  .why-big-num{font-size:10rem}
+
+  .contact-section{
+    display:flex;flex-direction:column;
+    padding:5rem 5%;gap:3rem;
+  }
+
+  .footer-top{grid-template-columns:1fr 1fr;gap:3rem}
+  .footer-brand{grid-column:span 2}
+}
+
+/* ══════════════════════════
+   RESPONSIVE — MOBILE ≤600px
+   ══════════════════════════ */
+@media(max-width:600px){
+  section{padding:4rem 5%}
+  nav{padding:.9rem 4%}
+  .brand-name{font-size:.95rem}
+
+  .hero-left{padding:5.5rem 5% 2.5rem}
+  .hero-title{font-size:clamp(2.2rem,10vw,3.5rem)}
+  .hero-desc{font-size:.9rem;max-width:100%}
+  .hero-actions{flex-direction:column;width:100%}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center;box-sizing:border-box}
+  .hero-right{height:52vw;min-height:180px}
+  .hero-stats{gap:1rem;padding:1.2rem 5%}
+  .hero-stat-num{font-size:1.6rem}
+  .hero-badge{width:65px;height:65px}
+
+  .services-grid{grid-template-columns:1fr}
+  .service-card{
+    border-right:none!important;
+    border-left:none!important;
+    border-top:1px solid var(--mist)!important;
+  }
+  .service-card:first-child{border-top:none!important}
+
+  .how-steps{grid-template-columns:1fr;gap:2.5rem}
+  .how-step{padding:0}
+
+  .cat-grid{grid-template-columns:1fr 1fr;gap:.8rem}
+  .cat-card{padding:1.5rem 1rem}
+
+  .why-section{padding:4rem 5%}
+  .why-visual{height:200px}
+  .why-big-num{font-size:7rem}
+  .why-badge-mini{top:1.5rem;right:1.5rem;padding:.8rem 1rem}
+  .why-badge-mini strong{font-size:1.5rem}
+  .stats{grid-template-columns:repeat(3,1fr);gap:.8rem}
+
+  .contact-section{padding:4rem 5%;gap:2.5rem}
+  .form-row{grid-template-columns:1fr}
+  .contact-form{padding:2rem 1.5rem;box-sizing:border-box;width:100%}
+
+  .footer-top{grid-template-columns:1fr;gap:2rem}
+  .footer-brand{grid-column:span 1}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-brand">
+    <div class="logo-box">
+      <!-- Remplacez le chemin ci-dessous par le chemin correct vers votre logo (ex: ./logo.png ou images/logo.png) -->
+      <!-- Ajout d'un fallback si l'image ne se charge pas -->
+      <img src="./j.jpeg" alt="Logo Business In China" style="width:40px;height:40px;object-fit:contain;display:block" onerror="this.style.display='none';this.parentNode.classList.add('logo-missing')">
+      <style>
+        /* Affiche un texte de remplacement si le logo est manquant */
+        .logo-box.logo-missing::after{content:'Business In China';font-weight:700;margin-left:8px;display:inline-block;vertical-align:middle}
+      </style>
+    </div>
+    <div class="brand-name">
+      Business In China
+      <span>Sourcing & Import</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#comment">Comment ça marche</a></li>
+    <li><a href="#categories">Catégories</a></li>
+    <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="#services" class="nav-mob-link">Services</a>
+  <a href="#comment" class="nav-mob-link">Comment ça marche</a>
+  <a href="#categories" class="nav-mob-link">Catégories</a>
+  <a href="#contact" class="nav-mob-link">Nous contacter</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Votre passerelle vers la Chine</p>
+    <h1 class="hero-title">
+      <div class="line"><span>Achetez en</span></div>
+      <div class="line"><span class="accent">Chine,</span></div>
+      <div class="line"><span class="gold">sans frontières.</span></div>
+    </h1>
+    <p class="hero-desc">
+      Voitures, immobilier, électronique, quincaillerie… Nous connectons votre entreprise aux meilleurs fournisseurs chinois et gérons l'ensemble du processus de sourcing pour vous.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Démarrer un projet</a>
+      <a href="#comment" class="btn-secondary">Comment ça marche</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual-fill">
+      <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80&auto=format&fit=crop" alt="Logistique et import Chine" loading="eager">
+    </div>
+   
+  </div>
+  <div class="hero-stats">
+    <div>
+      <span class="hero-stat-num">500+</span>
+      <span class="hero-stat-label">Fournisseurs vérifiés</span>
+    </div>
+    <div>
+      <span class="hero-stat-num">30+</span>
+      <span class="hero-stat-label">Secteurs couverts</span>
+    </div>
+    <div>
+      <span class="hero-stat-num">100%</span>
+      <span class="hero-stat-label">Suivi garanti</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker">
+    <span class="ticker-item">Automobiles</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Immobilier</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Quincaillerie</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Électronique</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Textile & Mode</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Machinerie industrielle</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Matériaux de construction</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Cosmétiques</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Alimentaire</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Énergies renouvelables</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Automobiles</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Immobilier</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Quincaillerie</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Électronique</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Textile & Mode</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Machinerie industrielle</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Matériaux de construction</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Cosmétiques</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Alimentaire</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Énergies renouvelables</span><span class="ticker-sep">✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-top reveal">
+    <div class="services-intro">
+      <p class="section-tag">Nos services</p>
+      <h2 class="section-h2">Ce que nous faisons <em>pour vous</em></h2>
+    </div>
+    <div>
+      <p class="services-intro p" style="font-size:1.05rem;line-height:1.75;color:var(--muted);font-weight:300">
+        De la recherche du fournisseur idéal jusqu'à la livraison, Business In China gère chaque étape avec rigueur et transparence. Vous commandez, nous exécutons.
+      </p>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal reveal-d1">
+      <span class="svc-icon">🔍</span>
+      <p class="svc-num">01</p>
+      <h3 class="svc-title">Sourcing & Recherche</h3>
+      <p class="svc-desc">Identification et sélection des meilleurs fournisseurs chinois selon vos critères de qualité, prix et délai.</p>
+    </div>
+    <div class="service-card reveal reveal-d2">
+      <span class="svc-icon">🤝</span>
+      <p class="svc-num">02</p>
+      <h3 class="svc-title">Mise en Relation</h3>
+      <p class="svc-desc">Nous établissons un canal de communication direct entre votre entreprise et le fournisseur, en gérant la barrière linguistique.</p>
+    </div>
+    <div class="service-card reveal reveal-d3">
+      <span class="svc-icon">📦</span>
+      <p class="svc-num">03</p>
+      <h3 class="svc-title">Suivi & Logistique</h3>
+      <p class="svc-desc">Contrôle qualité, suivi de commande, gestion des formalités douanières et coordination de l'expédition.</p>
+    </div>
+    <div class="service-card reveal reveal-d1" style="border-top:none">
+      <span class="svc-icon">🏭</span>
+      <p class="svc-num">04</p>
+      <h3 class="svc-title">Inspection Usine</h3>
+      <p class="svc-desc">Visite et audit sur place des usines pour valider la conformité avant toute commande importante.</p>
+    </div>
+    <div class="service-card reveal reveal-d2" style="border-top:none">
+      <span class="svc-icon">💰</span>
+      <p class="svc-num">05</p>
+      <h3 class="svc-title">Négociation des Prix</h3>
+      <p class="svc-desc">Grâce à notre réseau et notre expertise locale, nous obtenons les meilleures conditions tarifaires pour vous.</p>
+    </div>
+    <div class="service-card reveal reveal-d3" style="border-top:none">
+      <span class="svc-icon">🌐</span>
+      <p class="svc-num">06</p>
+      <h3 class="svc-title">Conseil Import-Export</h3>
+      <p class="svc-desc">Accompagnement réglementaire, juridique et fiscal pour sécuriser vos opérations internationales.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="comment">
+  <div style="position:relative;z-index:2">
+    <div class="reveal">
+      <p class="section-tag">Processus</p>
+      <h2 class="section-h2">Comment ça <em>marche</em> ?</h2>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal reveal-d1">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Vous nous contactez</h3>
+        <p class="step-desc">Décrivez votre besoin via WhatsApp, email ou notre formulaire. Aucune demande n'est trop grande ou trop petite.</p>
+      </div>
+      <div class="how-step reveal reveal-d2">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Analyse & Recherche</h3>
+        <p class="step-desc">Notre équipe en Chine analyse votre demande et identifie les fournisseurs qualifiés dans notre réseau.</p>
+      </div>
+      <div class="how-step reveal reveal-d3">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Mise en Relation</h3>
+        <p class="step-desc">Nous vous présentons une sélection de fournisseurs vérifiés avec devis, fiches techniques et conditions.</p>
+      </div>
+      <div class="how-step reveal reveal-d4">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Suivi jusqu'à la livraison</h3>
+        <p class="step-desc">Une fois la commande validée, nous assurons le suivi complet jusqu'à réception chez vous.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section" id="categories">
+  <div class="reveal">
+    <p class="section-tag">Secteurs d'activité</p>
+    <h2 class="section-h2">Tout ce que vous voulez <em>acheter en Chine</em></h2>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card reveal reveal-d1">
+      <span class="cat-icon">🚗</span>
+      <h4 class="cat-title">Automobile</h4>
+      <p class="cat-sub">Véhicules neufs, pièces détachées, véhicules électriques, accessoires</p>
+    </div>
+    <div class="cat-card reveal reveal-d2">
+      <span class="cat-icon">🏢</span>
+      <h4 class="cat-title">Immobilier</h4>
+      <p class="cat-sub">Investissement, matériaux de construction, équipements pour bâtiment</p>
+    </div>
+    <div class="cat-card reveal reveal-d3">
+      <span class="cat-icon">🔧</span>
+      <h4 class="cat-title">Quincaillerie</h4>
+      <p class="cat-sub">Outillage, visserie, équipements industriels, matériels BTP</p>
+    </div>
+    <div class="cat-card reveal reveal-d4">
+      <span class="cat-icon">📱</span>
+      <h4 class="cat-title">Électronique</h4>
+      <p class="cat-sub">Smartphones, composants, équipements tech, appareils ménagers</p>
+    </div>
+    <div class="cat-card reveal reveal-d1">
+      <span class="cat-icon">👗</span>
+      <h4 class="cat-title">Textile & Mode</h4>
+      <p class="cat-sub">Vêtements, tissus, chaussures, accessoires de mode, marque privée</p>
+    </div>
+    <div class="cat-card reveal reveal-d2">
+      <span class="cat-icon">⚙️</span>
+      <h4 class="cat-title">Machinerie</h4>
+      <p class="cat-sub">Machines industrielles, équipements agricoles, équipements de production</p>
+    </div>
+    <div class="cat-card reveal reveal-d3">
+      <span class="cat-icon">💄</span>
+      <h4 class="cat-title">Cosmétiques</h4>
+      <p class="cat-sub">Soins, maquillage, packaging, production sous marque blanche</p>
+    </div>
+    <div class="cat-card reveal reveal-d4">
+      <span class="cat-icon">🌱</span>
+      <h4 class="cat-title">Énergie & Solaire</h4>
+      <p class="cat-sub">Panneaux solaires, batteries, équipements d'énergie renouvelable</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="why-visual reveal">
+    <div class="why-visual-fill"></div>
+    <div class="why-badge-mini">
+      <strong>N°1</strong>
+      <span>Votre partenaire<br>en Chine</span>
+    </div>
+  </div>
+  <div class="why-content reveal reveal-d2">
+    <p class="section-tag">Pourquoi nous choisir</p>
+    <h2 class="section-h2">Votre partenaire de <em>confiance</em> en Chine</h2>
+    <ul class="why-list">
+      <li>Équipe locale basée en Chine avec une connaissance approfondie du marché</li>
+      <li>Réseau de plus de 500 fournisseurs vérifiés dans plus de 30 secteurs</li>
+      <li>Gestion complète de la barrière linguistique et culturelle</li>
+      <li>Contrôle qualité rigoureux avant chaque expédition</li>
+      <li>Suivi en temps réel de vos commandes et expéditions</li>
+      <li>Tarifs compétitifs grâce à notre pouvoir de négociation</li>
+      <li>Accompagnement juridique et douanier inclus</li>
+    </ul>
+    <div style="margin-top:2.5rem">
+      <a href="#contact" class="btn-primary" style="background:var(--gold);color:var(--ink)">Nous faire confiance</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-info reveal">
+    <p class="section-tag">Contact</p>
+    <h2 class="section-h2">Parlons de votre <em>projet</em></h2>
+    <p style="font-size:1rem;line-height:1.75;color:var(--muted);font-weight:300;margin-top:1rem">
+      Vous avez un besoin d'achat en Chine ? Décrivez-nous votre projet et nous vous répondons sous 24h.
+    </p>
+    <div class="contact-detail">
+      <div class="cdetail">
+        <div class="cdetail-icon">📱</div>
+        <div>
+          <div class="cdetail-label">WhatsApp / Téléphone</div>
+          <div class="cdetail-val"><a href="https://wa.me/8613501658242">+86 135 0165 8242</a></div>
+        </div>
+      </div>
+      <div class="cdetail">
+        <div class="cdetail-icon">✉️</div>
+        <div>
+          <div class="cdetail-label">Email</div>
+          <div class="cdetail-val"><a href="mailto:businessinchina241@gmail.com">businessinchina241@gmail.com</a></div>
+        </div>
+      </div>
+      <div class="cdetail">
+        <div class="cdetail-icon">📍</div>
+        <div>
+          <div class="cdetail-label">Basé en</div>
+          <div class="cdetail-val">Chine — disponible dans le monde entier</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form reveal reveal-d2">
+    <h3>Envoyez-nous votre demande</h3>
+    <div class="form-row">
+      <div class="field">
+        <label>Nom / Société</label>
+        <input type="text" placeholder="Votre nom ou entreprise">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" placeholder="votre@email.com">
+      </div>
+    </div>
+    <div class="field">
+      <label>Catégorie de produit</label>
+      <select>
+        <option value="" disabled selected>Sélectionnez une catégorie</option>
+        <option>Automobile</option>
+        <option>Immobilier / Construction</option>
+        <option>Quincaillerie / Outillage</option>
+        <option>Électronique</option>
+        <option>Textile & Mode</option>
+        <option>Machinerie industrielle</option>
+        <option>Cosmétiques</option>
+        <option>Énergie & Solaire</option>
+        <option>Autre</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Décrivez votre besoin</label>
+      <textarea rows="4" placeholder="Produit recherché, quantité estimée, budget, délai souhaité..."></textarea>
+    </div>
+    <button class="submit-btn">Envoyer la demande</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-brand" style="text-decoration:none;display:flex;align-items:center;gap:1rem">
+<div class="logo-box">
+      <!-- Remplacez le chemin ci-dessous par le chemin correct vers votre logo (ex: ./logo.png ou images/logo.png) -->
+      <!-- Ajout d'un fallback si l'image ne se charge pas -->
+      <img src="./j.jpeg" alt="Logo Business In China" style="width:40px;height:40px;object-fit:contain;display:block" onerror="this.style.display='none';this.parentNode.classList.add('logo-missing')">
+      <style>
+        /* Affiche un texte de remplacement si le logo est manquant */
+        .logo-box.logo-missing::after{content:'Business In China';font-weight:700;margin-left:8px;display:inline-block;vertical-align:middle}
+      </style>
+    </div>        <div class="brand-name">Business In China<span>Sourcing & Import</span></div>
+      </div>
+      <p class="footer-about">Votre passerelle vers les fournisseurs chinois. Automobiles, immobilier, électronique, quincaillerie et bien plus — nous gérons tout pour vous, de la recherche à la livraison.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Sourcing</a></li>
+        <li><a href="#services">Mise en relation</a></li>
+        <li><a href="#services">Suivi logistique</a></li>
+        <li><a href="#services">Inspection usine</a></li>
+        <li><a href="#services">Négociation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://wa.me/8613501658242">WhatsApp</a></li>
+        <li><a href="mailto:businessinchina241@gmail.com">businessinchina241@gmail.com</a></li>
+        <li><a href="#categories">Catégories</a></li>
+        <li><a href="#comment">Comment ça marche</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Business In China — Tous droits réservés</span>
+    <div class="footer-social">
+      <a href="https://wa.me/8613501658242" class="social-link" title="WhatsApp">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <a href="#" id="footer-fb" class="social-link" title="Facebook">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" id="footer-ig" class="social-link" title="Instagram">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- SOCIAL FABS (WhatsApp + Facebook + Instagram) -->
+<div class="social-fabs">
+  <a href="https://wa.me/8613501658242" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="fab-label">WhatsApp</span>
+  </a>
+  <a href="#" class="fb-fab" id="fb-fab-link" target="_blank" rel="noopener" aria-label="Facebook">
+    <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    <span class="fab-label">Facebook</span>
+  </a>
+  <a href="#" class="ig-fab" id="ig-fab-link" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    <span class="fab-label">Instagram</span>
+  </a>
+</div>
+
+<script>
+// Hamburger
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('navMobile');
+ham.addEventListener('click', () => {
+  mob.classList.toggle('open');
+  const spans = ham.querySelectorAll('span');
+  if (mob.classList.contains('open')) {
+    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+  } else {
+    spans.forEach(s => { s.style.transform=''; s.style.opacity=''; });
+  }
+});
+document.querySelectorAll('.nav-mob-link').forEach(l => l.addEventListener('click', () => {
+  mob.classList.remove('open');
+  ham.querySelectorAll('span').forEach(s => { s.style.transform=''; s.style.opacity=''; });
+}));
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Ticker duplicate
+const t = document.getElementById('ticker');
+t.innerHTML += t.innerHTML;
+</script>
+</body>
+</html>
