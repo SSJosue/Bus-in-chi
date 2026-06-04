@@ -1042,37 +1042,53 @@ img, svg, video { max-width: 100%; }
   </div>
   <div class="contact-form reveal reveal-d2">
     <h3>Envoyez-nous votre demande</h3>
-    <div class="form-row">
-      <div class="field">
-        <label>Nom / Société</label>
-        <input type="text" placeholder="Votre nom ou entreprise">
+    <form id="contactForm">
+      <div class="form-row">
+        <div class="field">
+          <label>Nom / Société</label>
+          <input type="text" name="name" placeholder="Votre nom ou entreprise" required>
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="votre@email.com" required>
+        </div>
       </div>
       <div class="field">
-        <label>Email</label>
-        <input type="email" placeholder="votre@email.com">
+        <label>Catégorie de produit</label>
+        <select name="category" required>
+          <option value="" disabled selected>Sélectionnez une catégorie</option>
+          <option>Automobile</option>
+          <option>Immobilier / Construction</option>
+          <option>Quincaillerie / Outillage</option>
+          <option>Électronique</option>
+          <option>Textile & Mode</option>
+          <option>Machinerie industrielle</option>
+          <option>Cosmétiques</option>
+          <option>Énergie & Solaire</option>
+          <option>Autre</option>
+        </select>
       </div>
-    </div>
-    <div class="field">
-      <label>Catégorie de produit</label>
-      <select>
-        <option value="" disabled selected>Sélectionnez une catégorie</option>
-        <option>Automobile</option>
-        <option>Immobilier / Construction</option>
-        <option>Quincaillerie / Outillage</option>
-        <option>Électronique</option>
-        <option>Textile & Mode</option>
-        <option>Machinerie industrielle</option>
-        <option>Cosmétiques</option>
-        <option>Énergie & Solaire</option>
-        <option>Autre</option>
-      </select>
-    </div>
-    <div class="field">
-      <label>Décrivez votre besoin</label>
-      <textarea rows="4" placeholder="Produit recherché, quantité estimée, budget, délai souhaité..."></textarea>
-    </div>
-    <button class="submit-btn">Envoyer la demande</button>
+      <div class="field">
+        <label>Décrivez votre besoin</label>
+        <textarea rows="4" name="message" placeholder="Produit recherché, quantité estimée, budget, délai souhaité..." required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Envoyer la demande</button>
+    </form>
   </div>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        category: this.category.value,
+        message: this.message.value
+      };
+      const mailtoLink = `mailto:businessinchina241@gmail.com?subject=Demande%20Sourcing%20-%20${encodeURIComponent(formData.name)}&body=Nom:%20${encodeURIComponent(formData.name)}%0AEmail:%20${encodeURIComponent(formData.email)}%0ACatégorie:%20${encodeURIComponent(formData.category)}%0A%0AMessage:%0A${encodeURIComponent(formData.message)}`;
+      window.location.href = mailtoLink;
+      this.reset();
+    });
+  </script>
 </section>
 
 <!-- FOOTER -->
